@@ -2,16 +2,16 @@ const { useState } = React;
 
 function ForeignAidViz() {
     const [data] = useState([
-        { country: 'Israel', totalAid: 3800000000, population: 9300000 },
-        { country: 'Egypt', totalAid: 1430000000, population: 104000000 },
-        { country: 'Jordan', totalAid: 1520000000, population: 10200000 },
-        { country: 'Ukraine', totalAid: 13600000000, population: 44000000 },
-        { country: 'Afghanistan', totalAid: 260000000, population: 38000000 },
-        { country: 'Ethiopia', totalAid: 960000000, population: 117000000 },
-        { country: 'South Sudan', totalAid: 520000000, population: 11200000 },
-        { country: 'Syria', totalAid: 835000000, population: 17500000 },
-        { country: 'Yemen', totalAid: 975000000, population: 30500000 },
-        { country: 'Iraq', totalAid: 440000000, population: 40500000 }
+        { country: 'Israel', totalAid: 3800000000, population: 9814000 },
+        { country: 'Egypt', totalAid: 1430000000, population: 106156000 },
+        { country: 'Jordan', totalAid: 1520000000, population: 11337000 },
+        { country: 'Ukraine', totalAid: 13600000000, population: 36744000 },
+        { country: 'Afghanistan', totalAid: 260000000, population: 42239000 },
+        { country: 'Ethiopia', totalAid: 960000000, population: 126527000 },
+        { country: 'South Sudan', totalAid: 520000000, population: 11088000 },
+        { country: 'Syria', totalAid: 835000000, population: 23227000 },
+        { country: 'Yemen', totalAid: 975000000, population: 34449000 },
+        { country: 'Iraq', totalAid: 440000000, population: 45504000 }
     ]);
 
     const [sortOrder, setSortOrder] = useState('desc');
