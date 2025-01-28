@@ -1,11 +1,7 @@
 // app.js
-console.log('Script loading...');
-
 const { useState } = React;
 
 function ForeignAidViz() {
-    console.log('ForeignAidViz component initializing');
-    
     const [data] = useState([
         { country: 'Israel', totalAid: 3800000000, population: 9300000 },
         { country: 'Egypt', totalAid: 1430000000, population: 104000000 },
@@ -29,16 +25,16 @@ function ForeignAidViz() {
     );
 
     return React.createElement('div', { className: 'card' },
-        React.createElement('h1', { className: 'text-2xl mb-4' }, 'US Foreign Aid Per Capita by Country'),
+        React.createElement('h1', null, 'US Foreign Aid Per Capita by Country'),
         React.createElement('table', null,
             React.createElement('thead', null,
                 React.createElement('tr', null,
                     React.createElement('th', null, 'Country'),
-                    React.createElement('th', { style: { textAlign: 'right' } }, 'Total Aid (USD)'),
-                    React.createElement('th', { style: { textAlign: 'right' } }, 'Population'),
+                    React.createElement('th', null, 'Total Aid (USD)'),
+                    React.createElement('th', null, 'Population'),
                     React.createElement('th', { 
-                        style: { textAlign: 'right', cursor: 'pointer' },
-                        onClick: () => setSortOrder(prev => prev === 'desc' ? 'asc' : 'desc')
+                        onClick: () => setSortOrder(prev => prev === 'desc' ? 'asc' : 'desc'),
+                        style: { cursor: 'pointer' }
                     }, 'Per Capita Aid (USD)')
                 )
             ),
@@ -46,15 +42,9 @@ function ForeignAidViz() {
                 processedData.map(item => 
                     React.createElement('tr', { key: item.country },
                         React.createElement('td', null, item.country),
-                        React.createElement('td', { style: { textAlign: 'right' } }, 
-                            `$${item.totalAid.toLocaleString()}`
-                        ),
-                        React.createElement('td', { style: { textAlign: 'right' } }, 
-                            item.population.toLocaleString()
-                        ),
-                        React.createElement('td', { style: { textAlign: 'right' } }, 
-                            `$${item.perCapita.toFixed(2)}`
-                        )
+                        React.createElement('td', null, `$${item.totalAid.toLocaleString()}`),
+                        React.createElement('td', null, item.population.toLocaleString()),
+                        React.createElement('td', null, `$${item.perCapita.toFixed(2)}`)
                     )
                 )
             )
@@ -62,15 +52,5 @@ function ForeignAidViz() {
     );
 }
 
-// Wait for DOM to be ready
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM loaded, attempting to render...');
-    try {
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(React.createElement(ForeignAidViz));
-        console.log('Render complete');
-    } catch (error) {
-        console.error('Error rendering application:', error);
-        document.getElementById('root').innerHTML = 'Error loading visualization. Please check console for details.';
-    }
-});
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(React.createElement(ForeignAidViz));
